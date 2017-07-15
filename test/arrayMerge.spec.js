@@ -1,0 +1,49 @@
+describe('Array merge operator', function () {
+    const object = {
+        name: 'Foo',
+        age: 20
+    };
+
+    const object2 = {
+        name: 'Bar',
+    };
+
+    const object3 = {
+        name: 'Foo',
+        age: 20
+    };
+
+    const array = [1, 2, 3, 4];
+
+    const array2 = [2, 2, 3];
+
+    const array3 = [1, 2, 3, 4];
+
+    const arrayObj = [object, object3];
+
+    const arrayObj2 = [object, object2, object3];
+
+    const arrayObj3 = [object, object3];
+
+    it('should return same reference when parameters are equal', function () {
+        const mergedArray = array.merge(array3);
+
+        expect(mergedArray).toEqual(array);
+    });
+
+    it('should return new merged array when parameters are different', function () {
+        const mergedArray = array.merge(array2);
+        const newMergedArray = [2, 2, 3, 4];
+        expect(mergedArray).toEqual(newMergedArray);
+    });
+
+    it('should use shallow diff to check array of objects', function () {
+        const mergedArrayObj = arrayObj.merge(arrayObj3);
+        const mergedArrayObj2 = arrayObj.merge(arrayObj2);
+
+        const newMergedArrayObj = [object, object2, object3];
+
+        expect(mergedArrayObj).toEqual(arrayObj);
+        expect(mergedArrayObj2).toEqual(newMergedArrayObj);
+    });
+});
