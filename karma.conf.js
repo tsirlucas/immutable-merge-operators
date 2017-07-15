@@ -1,8 +1,8 @@
 module.exports = function (config) {
     config.set({
         browsers: ['PhantomJS'],
+        browserNoActivityTimeout: 30000,
         files: [
-            './node_modules/phantomjs-polyfill-object-assign/object-assign-polyfill.js',
             {pattern: 'src/index.js', included: true, watched: true},
             {pattern: 'test/**/*.spec.js', watched: true}
         ],
@@ -12,9 +12,8 @@ module.exports = function (config) {
             'test/**/*spec.js': ['browserify']
         },
         browserify: {
-            debug: true,
             transform: [
-                ['babelify'],
+                ['babelify', { plugins: ["transform-object-assign"] }],
                 ['browserify-istanbul', {
                     instrumenterConfig: {
                         embedSource: true   // this is important for HTML reports
@@ -24,6 +23,12 @@ module.exports = function (config) {
         },
         reporters: ['progress', 'coverage'],
         coverageReporter: {
+            // configure the reporter to use isparta for JavaScript coverage
+            // Only on { "karma-coverage": "douglasduteil/karma-coverage#next" }
+            instrumenters: {isparta: require('isparta')},
+            instrumenter: {
+                '**/*.js': 'isparta'
+            },
             dir: './coverage',
             reporters: [
                 {type: 'text-summary'},
