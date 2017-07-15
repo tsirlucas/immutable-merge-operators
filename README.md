@@ -1,4 +1,6 @@
 # Immutable merge operators
+[![code climate](https://codeclimate.com/github/redux-observable/redux-observable/badges/gpa.svg)](https://codeclimate.com/github/tsirlucas/immutable-merge-operators)
+
 100% vanilla JS immutable merge operators that returns the same reference if 
 nothing changes.
 
