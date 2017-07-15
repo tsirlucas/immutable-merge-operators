@@ -43,13 +43,15 @@ const merged = object.merge(object2);
 
 const merged2 = object.merge(object3);
 
-const mergedState = state.merge(Object.assign({}, state2, {
+const mergedState = state.merge({
+    ...state2,
     object: state.object.merge(state2.object)
-}));
+});
 
-const mergedState2 = state.merge(Object.assign({}, state3, {
+const mergedState2 = state.merge({
+    ...state3,
     object: state.object.merge(state3.object)
-}));
+});
 
 const mergedArray = array.merge(array2);
 
