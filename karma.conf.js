@@ -14,7 +14,21 @@ module.exports = function (config) {
         browserify: {
             debug: true,
             transform: [
-                ['babelify']
+                ['babelify'],
+                ['browserify-istanbul', {
+                    instrumenterConfig: {
+                        embedSource: true   // this is important for HTML reports
+                    }
+                }]
+            ]
+        },
+        reporters: ['progress', 'coverage'],
+        coverageReporter: {
+            dir: './coverage',
+            reporters: [
+                {type: 'text-summary'},
+                {type: 'html'},
+                {type: 'lcovonly', subdir: '.', file: 'lcov.info'}
             ]
         }
     });
