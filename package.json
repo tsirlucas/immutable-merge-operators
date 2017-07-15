@@ -4,8 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "dev": "webpack-dev-server",
-    "build": "NODE_ENV=production BABEL_ENV=production webpack --config webpack.production.config.babel.js",
+    "build": "NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.babel.js",
     "test": "npm run -s build && karma start"
   },
   "keywords": [
@@ -28,7 +27,6 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "karma-webpack": "^2.0.4",
     "phantomjs-polyfill-object-assign": "0.0.2",
-    "webpack": "^3.3.0",
-    "webpack-dev-server": "^2.5.1"
+    "webpack": "^3.3.0"
   }
 }
