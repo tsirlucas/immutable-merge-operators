@@ -22,19 +22,5 @@ module.exports = function (config) {
             ]
         },
         reporters: ['progress', 'coverage'],
-        coverageReporter: {
-            // configure the reporter to use isparta for JavaScript coverage
-            // Only on { "karma-coverage": "douglasduteil/karma-coverage#next" }
-            instrumenters: {isparta: require('isparta')},
-            instrumenter: {
-                '**/*.js': 'isparta'
-            },
-            dir: './coverage',
-            reporters: [
-                {type: 'text-summary'},
-                {type: 'html'},
-                {type: 'lcovonly', subdir: '.', file: 'lcov.info'}
-            ]
-        }
     });
 };
