@@ -28,12 +28,17 @@ describe('Array merge operator', function () {
     it('should return same reference when parameters are equal', function () {
         const mergedArray = array.merge(array3);
 
+        //checking reference
+        expect(true).toEqual(mergedArray === array);
         expect(mergedArray).toEqual(array);
     });
 
     it('should return new merged array when parameters are different', function () {
         const mergedArray = array.merge(array2);
         const newMergedArray = [2, 2, 3, 4];
+
+        //checking reference
+        expect(false).toEqual(mergedArray === newMergedArray);
         expect(mergedArray).toEqual(newMergedArray);
     });
 
@@ -45,5 +50,9 @@ describe('Array merge operator', function () {
 
         expect(mergedArrayObj).toEqual(arrayObj);
         expect(mergedArrayObj2).toEqual(newMergedArrayObj);
+
+        //checking references
+        expect(true).toEqual(mergedArrayObj === arrayObj);
+        expect(false).toEqual(mergedArrayObj2 === newMergedArrayObj);
     });
 });
