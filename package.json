@@ -1,5 +1,5 @@
 {
-  "name": "redux-immutable-merge",
+  "name": "immutable-merge-operators",
   "version": "0.1.0",
   "description": "",
   "main": "dist/index.js",
