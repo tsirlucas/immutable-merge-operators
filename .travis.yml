@@ -5,5 +5,4 @@ branches:
   only:
     - master
 before_script:
-  - yarn
-  - yarn build
+  - npm build
