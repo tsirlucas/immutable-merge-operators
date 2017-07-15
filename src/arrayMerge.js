@@ -1,10 +1,11 @@
 import {arrayEqual} from './util';
 
-Array.prototype.merge = function (array) {
-    if (this.length !== array.length) return [...this, ...array];
+Array.prototype.merge = function (newArray) {
+    const array = this;
+    if (this.length !== newArray.length) return Object.assign([], array, newArray);
 
-    for (let key in array) {
-        if (!arrayEqual(this[key], array[key])) return [...this, ...array];
+    for (let key in newArray) {
+        if (!arrayEqual(array[key], newArray[key])) return Object.assign([], array, newArray);
     }
 
     return this;
