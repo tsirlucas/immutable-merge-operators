@@ -15,6 +15,9 @@ describe('Object merge operator', function () {
 
     it('should return same reference when parameters are equal', function () {
         const merged = object.merge(object3);
+
+        //checking reference
+        expect(true).toEqual(merged === object);
         expect(merged).toEqual(object);
     });
 
@@ -27,5 +30,52 @@ describe('Object merge operator', function () {
         };
 
         expect(merged).toEqual(newMerged);
+
+        //checking reference
+        expect(false).toEqual(newMerged === merged);
+    });
+
+    it('should be able to deep merge', function () {
+        const state = {
+            object: object,
+            foo: 'bar'
+        };
+
+        const state2 = {
+            object: object2
+        };
+
+        const state3 = {
+            object: object,
+            foo: 'bar'
+        };
+
+        const mergedState = state.merge({
+            ...state3,
+            object: state.object.merge(state3.object)
+        });
+
+        const mergedState2 = state.merge({
+            ...state2,
+            object: state.object.merge(state2.object)
+        });
+
+        const newMergedState = {
+            object: {
+                name: 'Bar',
+                age: 20
+            },
+            foo: 'bar'
+        };
+
+        expect(mergedState).toEqual(state);
+        expect(mergedState.object).toEqual(state.object);
+
+        //checking references
+        expect(true).toEqual(mergedState === state);
+        expect(true).toEqual(mergedState.object === state.object);
+
+        expect(mergedState2).toEqual(newMergedState);
+        expect(mergedState2.object).toEqual(newMergedState.object);
     });
 });
