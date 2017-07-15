@@ -10,7 +10,7 @@ const config = {
     },
     output: {
         path: buildPath,
-        filename: 'playground.js'
+        filename: '[name].js'
     },
 
     resolve: {
