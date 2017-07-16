@@ -1,9 +1,4 @@
-const isObject = (val) => {
-    if (val === null) {
-        return false;
-    }
-    return ( (typeof val === 'function') || (typeof val === 'object') );
-};
+const isObject = (val) => val === Object(val);
 
 const isArray = (val) => val && val.length >= 0;
 
