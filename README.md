@@ -1,4 +1,6 @@
 # Immutable merge operators
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/tsirlucas/immutable-merge-operators.svg)](https://greenkeeper.io/)
 [![build status](https://img.shields.io/travis/tsirlucas/immutable-merge-operators/master.svg)](https://travis-ci.org/tsirlucas/immutable-merge-operators)
 [![code climate](https://codeclimate.com/github/tsirlucas/immutable-merge-operators/badges/gpa.svg)](https://codeclimate.com/github/tsirlucas/immutable-merge-operators)
 [![coveralls](https://img.shields.io/coveralls/tsirlucas/immutable-merge-operators/master.svg)](https://coveralls.io/github/tsirlucas/immutable-merge-operators)
