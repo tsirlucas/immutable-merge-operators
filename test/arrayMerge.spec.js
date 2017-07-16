@@ -19,11 +19,13 @@ describe('Array merge operator', function () {
 
     const array3 = [1, 2, 3, 4];
 
-    const arrayObj = [object, object3];
+    const array4 = [1, 2, 3];
+
+    const arrayObj = [object, null];
 
     const arrayObj2 = [object, object2, object3];
 
-    const arrayObj3 = [object, object3];
+    const arrayObj3 = [object, null];
 
     it('should return same reference when parameters are equal', function () {
         const mergedArray = array.merge(array3);
@@ -35,11 +37,14 @@ describe('Array merge operator', function () {
 
     it('should return new merged array when parameters are different', function () {
         const mergedArray = array.merge(array2);
+        const mergedArray2 = array2.merge(array4);
         const newMergedArray = [2, 2, 3, 4];
 
         //checking reference
+        expect(false).toEqual(mergedArray2 === array4);
         expect(false).toEqual(mergedArray === newMergedArray);
         expect(mergedArray).toEqual(newMergedArray);
+        expect(mergedArray2).toEqual(array4);
     });
 
     it('should use shallow diff to check array of objects', function () {

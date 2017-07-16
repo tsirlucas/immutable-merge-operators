@@ -6,6 +6,7 @@ describe('Object merge operator', function () {
 
     const object2 = {
         name: 'Bar',
+        born: 1996
     };
 
     const object3 = {
@@ -13,12 +14,18 @@ describe('Object merge operator', function () {
         age: 20
     };
 
+    const emptyObj = {};
+
     it('should return same reference when parameters are equal', function () {
         const merged = object.merge(object3);
+        const merged2 = emptyObj.merge(object);
 
         //checking reference
         expect(true).toEqual(merged === object);
+        expect(false).toEqual(merged2 === object);
+
         expect(merged).toEqual(object);
+        expect(merged2).toEqual(object);
     });
 
     it('should return new merged object when parameters are different', function () {
@@ -26,7 +33,8 @@ describe('Object merge operator', function () {
 
         const newMerged = {
             name: 'Bar',
-            age: 20
+            age: 20,
+            born: 1996
         };
 
         expect(merged).toEqual(newMerged);
@@ -63,7 +71,8 @@ describe('Object merge operator', function () {
         const newMergedState = {
             object: {
                 name: 'Bar',
-                age: 20
+                age: 20,
+                born: 1996
             },
             foo: 'bar'
         };

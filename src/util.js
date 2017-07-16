@@ -5,7 +5,7 @@ const isObject = (val) => {
     return ( (typeof val === 'function') || (typeof val === 'object') );
 };
 
-const isArray = (val) => val.length >= 0;
+const isArray = (val) => val && val.length >= 0;
 
 const isPrimitive = (val) => !isObject(val) && !isArray(val);
 
