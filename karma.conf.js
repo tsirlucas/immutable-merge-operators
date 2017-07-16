@@ -21,6 +21,14 @@ module.exports = function (config) {
                 }]
             ]
         },
-        reporters: ['progress', 'coverage']
+        reporters: ['progress', 'coverage'],
+        coverageReporter: {
+            dir: './coverage',
+            reporters: [
+                {type: 'text-summary'},
+                {type: 'html'},
+                {type: 'lcovonly', subdir: '.', file: 'lcov.info'}
+            ]
+        }
     });
 };
