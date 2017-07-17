@@ -1,4 +1,4 @@
-import isPrimitive from '../../src/util';
+import {isPrimitive} from '../../src/util';
 
 describe('isPrimitive', () => {
   it('should return true if param is number', () => {
