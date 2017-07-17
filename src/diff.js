@@ -15,7 +15,7 @@ const arrayEqual = (arr1, arr2) => {
 
     if (!shallowEqual(arr1[key], arr2[key])) return false;
   }
-  return true
+  return true;
 };
 
 export {shallowEqual, arrayEqual};
