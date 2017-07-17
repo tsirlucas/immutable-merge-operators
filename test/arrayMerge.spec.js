@@ -53,11 +53,11 @@ describe('Array merge operator', () => {
 
     const newMergedArrayObj = [object, object2, object3];
 
-    expect(mergedArrayObj).toEqual(arrayObj);
-    expect(mergedArrayObj2).toEqual(newMergedArrayObj);
-
     //checking references
     expect(true).toEqual(mergedArrayObj === arrayObj);
     expect(false).toEqual(mergedArrayObj2 === newMergedArrayObj);
+
+    expect(mergedArrayObj).toEqual(arrayObj);
+    expect(mergedArrayObj2).toEqual(newMergedArrayObj);
   });
 });

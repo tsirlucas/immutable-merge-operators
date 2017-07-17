@@ -1,4 +1,4 @@
-import {shallowEqual} from './util.js';
+import {shallowEqual} from './diff.js';
 
 Object.prototype.merge = function (object) {
   if (shallowEqual(this, object)) {
