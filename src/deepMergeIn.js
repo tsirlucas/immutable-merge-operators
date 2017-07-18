@@ -1,22 +1,26 @@
 function deepMergeIn(path, merger) {
   let newItem = JSON.parse(JSON.stringify(this));
   let currItem = newItem;
+  const lastKey = path[path.length - 1];
 
   for (let i = 0; i < path.length; i++) {
     const key = path[i];
     if (!currItem[key]) {
       currItem[key] = {};
     }
-    currItem = currItem[key]
+    
+    if (i < path.length) {
+      currItem = currItem[key]
+    }
   }
-  const mergedItem = merger(currItem);
+  const mergedItem = merger(currItem[lastKey]);
 
-  if (mergedItem === currItem) {
+  if (mergedItem === currItem[lastKey]) {
     return this;
   }
 
   //Updating newItem via reference
-  currItem = Object.assign(currItem, mergedItem);
+  currItem[lastKey] = Object.assign(currItem[lastKey], mergedItem);
 
   return newItem;
 }
