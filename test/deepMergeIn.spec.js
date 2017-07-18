@@ -116,7 +116,7 @@ describe('Object merge operator', () => {
   it('should return new items when path doesnt exist on arrays', () => {
     const mergedArr = emptyArr.deepMergeIn(
       [0, 0],
-      (item) => item.merge(array3)
+      (item = []) => item.merge(array3)
     );
 
     const newMergedArr = [
