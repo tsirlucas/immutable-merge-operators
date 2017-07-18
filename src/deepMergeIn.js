@@ -9,7 +9,7 @@ function deepMergeIn(path, merger) {
       currItem[key] = {};
     }
     
-    if (i < path.length) {
+    if (i < path.length - 1) {
       currItem = currItem[key];
     }
   }
