@@ -1,4 +1,4 @@
-describe('Object merge operator', () => {
+describe('deepMergeIn operator', () => {
   const object = {
     object2: {
       object3: {}
