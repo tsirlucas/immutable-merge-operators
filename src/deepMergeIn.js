@@ -18,6 +18,11 @@ function deepMergeIn(path, merger) {
   if (mergedItem === currItem[lastKey]) {
     return this;
   }
+  
+  if (!currItem[lastKey]) {
+    currItem[lastKey] = mergedItem;
+    return newItem;
+  }
 
   //Updating newItem via reference
   currItem[lastKey] = Object.assign(currItem[lastKey], mergedItem);
