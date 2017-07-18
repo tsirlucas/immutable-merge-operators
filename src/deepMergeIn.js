@@ -10,7 +10,7 @@ function deepMergeIn(path, merger) {
     }
     
     if (i < path.length) {
-      currItem = currItem[key]
+      currItem = currItem[key];
     }
   }
   const mergedItem = merger(currItem[lastKey]);
