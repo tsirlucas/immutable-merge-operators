@@ -1,5 +1,7 @@
+import deepClone from 'lodash.clonedeep';
+
 function deepMergeIn(path, merger) {
-  let newItem = JSON.parse(JSON.stringify(this));
+  let newItem = deepClone(this);
   let currItem = newItem;
   const lastKey = path[path.length - 1];
 
