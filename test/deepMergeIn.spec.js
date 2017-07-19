@@ -96,7 +96,7 @@ describe('deepMergeIn operator', () => {
   it('should return new items when path doesnt exist', () => {
     const merged = emptyObj.deepMergeIn(
       ['object2', 'object3'],
-      (item) => item.merge(object3)
+      (item = {}) => item.merge(object3)
     );
 
     const newMerged = {
@@ -134,11 +134,11 @@ describe('deepMergeIn operator', () => {
     const merged = emptyObj
       .deepMergeIn(
         ['object2', 'object3'],
-        (item) => item.merge({a: 1})
+        (item = {}) => item.merge({a: 1})
       )
       .deepMergeIn(
         ['object4', 'object5'],
-        (item) => item.merge({b: 2})
+        (item = {}) => item.merge({b: 2})
       );
 
     const newMerged = {

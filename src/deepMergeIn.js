@@ -3,22 +3,20 @@ function deepMergeIn(path, merger) {
   let currItem = newItem;
   const lastKey = path[path.length - 1];
 
-  for (let i = 0; i < path.length; i++) {
+  for (let i = 0; i < path.length - 1; i++) {
     const key = path[i];
     if (!currItem[key]) {
       currItem[key] = {};
     }
-    
-    if (i < path.length - 1) {
-      currItem = currItem[key];
-    }
+    currItem = currItem[key];
   }
+
   const mergedItem = merger(currItem[lastKey]);
 
   if (mergedItem === currItem[lastKey]) {
     return this;
   }
-  
+
   if (!currItem[lastKey]) {
     currItem[lastKey] = mergedItem;
     return newItem;
