@@ -103,5 +103,6 @@ OBS: We use a adapted version of React's shallow comparison algorithm, so if
 you're looking for specific updates on giant trees, you may prefer Immutable.js
 
 # TODO
-- Deep merge/update
 - More and better tests
+- Cleaner code
+- More operators
