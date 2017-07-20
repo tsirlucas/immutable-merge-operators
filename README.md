@@ -54,7 +54,7 @@ in case you don't have the item on your tree.
            )
            .deepMergeIn(
              ['key4', 'key5'],
-             (item = []) => item.merge({b: 2})
+             (item = []) => item.merge([2])
            );
             
 
