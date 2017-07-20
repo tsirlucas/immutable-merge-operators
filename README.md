@@ -38,6 +38,26 @@ Just like you would do with spread or Object.assign
                 object: state.object.merge(state3.object)
             });
             
+# Deep merge
+Deep merge operator should be a good alternative to specific updates
+on deeper trees. It's also chainable, so you can do sequential 
+operations.
+
+It takes the path array and a callback function that you should
+execute on the desired object. Remember to pass a default parameter
+in case you don't have the item on your tree.
+
+     const merged = object
+           .deepMergeIn(
+             ['key1', 'key2'],
+             (item = {}) => item.merge({a: 1})
+           )
+           .deepMergeIn(
+             ['key4', 'key5'],
+             (item = []) => item.merge({b: 2})
+           );
+            
+
 # Lists
 immutable-merge-operators also supports arrays and arrays of objects
 
