@@ -1,4 +1,4 @@
-import {arrayEqual} from './diff';
+import {arrayEqual} from '../diff';
 
 Array.prototype.merge = function (newArray) {
   const array = this;

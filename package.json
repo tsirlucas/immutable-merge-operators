@@ -38,5 +38,8 @@
     "karma-phantomjs-launcher": "^1.0.4",
     "watchify": "^3.9.0",
     "webpack": "^3.3.0"
+  },
+  "dependencies": {
+    "lodash.clonedeep": "^4.5.0"
   }
 }
