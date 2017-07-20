@@ -1,4 +1,4 @@
-import deepClone from 'lodash.clonedeep';
+const deepClone = require('lodash.clonedeep');
 
 function deepMergeIn(path, merger) {
   let newItem = deepClone(this);
