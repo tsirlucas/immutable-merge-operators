@@ -99,9 +99,6 @@ It's 100% vanilla JS and this means that you'll use the operators on native
 objects and will receive a native object as return. It's easier to maintain
 and learn.
 
-OBS: We use a adapted version of React's shallow comparison algorithm, so if
-you're looking for specific updates on giant trees, you may prefer Immutable.js
-
 # TODO
 - More and better tests
 - Cleaner code
