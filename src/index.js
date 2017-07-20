@@ -1,3 +1,3 @@
-import './objectMerge';
-import './arrayMerge';
-import './deepMergeIn';
+import './operators/objectMerge';
+import './operators/arrayMerge';
+import './operators/deepMergeIn';
