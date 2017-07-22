@@ -14,7 +14,7 @@
     "immutable",
     "merge"
   ],
-  "author": "tsirlucas@gmail.com",
+  "author": "Lucas Correia <tsirlucas@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "babel-core": "^6.25.0",
