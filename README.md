@@ -7,7 +7,7 @@
 
 Supports modern browsers and IE9+:
 
-[![Sauce Test Status](https://saucelabs.com/browser-matrix/tsirlucas.svg)](https://saucelabs.com/u/tsirlucas)
+[![Browsers](https://saucelabs.com/browser-matrix/tsirlucas.svg)](https://saucelabs.com/u/tsirlucas)
 
 100% vanilla JS immutable merge operators that returns the same reference if 
 nothing changes.
