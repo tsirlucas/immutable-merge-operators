@@ -1,6 +1,6 @@
-var sauceLabs = process.env.SL;
+const sauceLabs = process.env.SL;
 
-var sauceLabsLaunchers = {
+const sauceLabsLaunchers = {
   sl_chrome: {
     base: 'SauceLabs',
     browserName: 'chrome',
