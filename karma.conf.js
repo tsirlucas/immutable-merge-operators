@@ -65,6 +65,13 @@ module.exports = function (config) {
         }]
       ]
     },
+
+    sauceLabs: {
+      testName: 'Unit Tests',
+      tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
+      startConnect: false,
+    },
+
     reporters: ['progress'].concat(
       sauceLabs ? 'saucelabs' : 'coverage'
     ),
