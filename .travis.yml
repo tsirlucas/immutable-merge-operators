@@ -13,4 +13,4 @@ before_script:
 addons:
   sauce_connect:
     username: "tsirlucas"
-    access_key: "`travis encrypt SAUCE_ACCESS_KEY=9f71a512-f409-4da2-81c6-e20d5acdcc60`"
+    access_key: "9f71a512-f409-4da2-81c6-e20d5acdcc60"
