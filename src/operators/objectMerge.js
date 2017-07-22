@@ -10,7 +10,7 @@ function objMerge(object) {
 
 Object.defineProperty(Object.prototype, 'merge', {
   value: objMerge,
-  writable: false,
+  writable: true,
   enumerable: false,
-  configurable: false
+  configurable: true
 });

@@ -39,14 +39,14 @@ function deepMergeIn(path, merger) {
 
 Object.defineProperty(Object.prototype, 'deepMergeIn', {
   value: deepMergeIn,
-  writable: false,
+  writable: true,
   enumerable: false,
-  configurable: false
+  configurable: true
 });
 
 Object.defineProperty(Array.prototype, 'deepMergeIn', {
   value: deepMergeIn,
-  writable: false,
+  writable: true,
   enumerable: false,
-  configurable: false
+  configurable: true
 });

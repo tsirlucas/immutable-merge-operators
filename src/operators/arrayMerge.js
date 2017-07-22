@@ -11,7 +11,7 @@ function arrayMerge(newArray) {
 
 Object.defineProperty(Array.prototype, 'merge', {
   value: arrayMerge,
-  writable: false,
+  writable: true,
   enumerable: false,
-  configurable: false
+  configurable: true
 });
