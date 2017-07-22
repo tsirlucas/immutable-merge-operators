@@ -1,5 +1,8 @@
 # Immutable merge operators
 
+100% vanilla JS immutable merge operators that returns the same reference if 
+nothing changes.
+
 [![Greenkeeper badge](https://badges.greenkeeper.io/tsirlucas/immutable-merge-operators.svg)](https://greenkeeper.io/)
 [![build status](https://img.shields.io/travis/tsirlucas/immutable-merge-operators/master.svg)](https://travis-ci.org/tsirlucas/immutable-merge-operators)
 [![code climate](https://codeclimate.com/github/tsirlucas/immutable-merge-operators/badges/gpa.svg)](https://codeclimate.com/github/tsirlucas/immutable-merge-operators)
@@ -8,9 +11,6 @@
 Supports modern browsers and IE9+:
 
 [![Browsers](https://saucelabs.com/browser-matrix/tsirlucas-imo.svg)](https://saucelabs.com/u/tsirlucas-imo)
-
-100% vanilla JS immutable merge operators that returns the same reference if 
-nothing changes.
 
 ##### Installing
     npm install immutable-merge-operators --save
