@@ -1,9 +1,16 @@
 import {shallowEqual} from '../diff.js';
 
-Object.prototype.merge = function (object) {
+function objMerge(object) {
   if (shallowEqual(this, object)) {
     return this;
   }
 
   return {...this, ...object};
-};
+}
+
+Object.defineProperty(Object.prototype, 'merge', {
+  value: objMerge,
+  writable: false,
+  enumerable: false,
+  configurable: false
+});

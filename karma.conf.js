@@ -3,6 +3,7 @@ module.exports = function (config) {
         browsers: ['PhantomJS'],
         browserNoActivityTimeout: 30000,
         files: [
+            {pattern: 'test/polyfiller.js'},
             {pattern: 'src/index.js', included: true, watched: true},
             {pattern: 'test/**/*.spec.js', watched: true}
         ],
