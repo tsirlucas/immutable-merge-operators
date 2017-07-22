@@ -70,6 +70,8 @@ module.exports = function (config) {
       testName: 'Unit Tests',
       tunnelIdentifier: process.env.TRAVIS_JOB_NUMBER,
       startConnect: false,
+      username: process.env.SAUCE_USERNAME,
+      accessKey: process.env.SAUCE_ACCESS_KEY
     },
 
     reporters: ['progress'].concat(
