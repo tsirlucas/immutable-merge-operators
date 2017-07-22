@@ -5,6 +5,10 @@
 [![code climate](https://codeclimate.com/github/tsirlucas/immutable-merge-operators/badges/gpa.svg)](https://codeclimate.com/github/tsirlucas/immutable-merge-operators)
 [![coveralls](https://img.shields.io/coveralls/tsirlucas/immutable-merge-operators/master.svg)](https://coveralls.io/github/tsirlucas/immutable-merge-operators)
 
+Supports modern browsers and IE9+:
+
+[![Sauce Test Status](https://saucelabs.com/buildstatus/tsirlucas)](https://saucelabs.com/u/tsirlucas)
+
 100% vanilla JS immutable merge operators that returns the same reference if 
 nothing changes.
 
