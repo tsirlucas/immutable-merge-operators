@@ -1,7 +1,7 @@
 {
   "name": "immutable-merge-operators",
   "version": "0.1.4",
-  "description": "",
+  "description": "100% vanilla JS immutable merge operators that returns the same reference if nothing changes",
   "main": "dist/index.js",
   "scripts": {
     "lint": "eslint src/** test/**",
