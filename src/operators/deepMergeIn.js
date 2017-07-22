@@ -37,6 +37,16 @@ function deepMergeIn(path, merger) {
   return newItem;
 }
 
-Object.prototype.deepMergeIn = deepMergeIn;
+Object.defineProperty(Object.prototype, 'deepMergeIn', {
+  value: deepMergeIn,
+  writable: false,
+  enumerable: false,
+  configurable: false
+});
 
-Array.prototype.deepMergeIn = deepMergeIn;
+Object.defineProperty(Array.prototype, 'deepMergeIn', {
+  value: deepMergeIn,
+  writable: false,
+  enumerable: false,
+  configurable: false
+});

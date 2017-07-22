@@ -1,0 +1,1 @@
+Object.prototype.polyfill = function () {};
