@@ -1,6 +1,6 @@
 {
   "name": "immutable-merge-operators",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "description": "100% vanilla JS immutable merge operators that returns the same reference if nothing changes",
   "main": "dist/index.js",
   "scripts": {
@@ -39,8 +39,5 @@
     "karma-sauce-launcher": "^1.1.0",
     "watchify": "^3.9.0",
     "webpack": "^3.3.0"
-  },
-  "dependencies": {
-    "lodash.clonedeep": "^4.5.0"
   }
 }

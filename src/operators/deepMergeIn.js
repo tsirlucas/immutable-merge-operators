@@ -1,40 +1,54 @@
-const deepClone = require('lodash.clonedeep');
+function getMerged(tree, path, merger, lastKey) {
+  let currItem = tree;
 
-function deepMergeIn(path, merger) {
-  let newItem = deepClone(this);
-  let currItem = newItem;
-  const lastKey = path[path.length - 1];
-
-
-  // Getting last item on path
   for (let i = 0; i < path.length - 1; i++) {
     const key = path[i];
     if (!currItem[key]) {
-      currItem[key] = {};
+      const mergedItem = merger();
+      return {item: mergedItem, changed: true};
     }
     currItem = currItem[key];
   }
 
-
-  // Merging item
   const mergedItem = merger(currItem[lastKey]);
 
-  // Checking reference
-  if (mergedItem === currItem[lastKey]) {
+  return {item: mergedItem, changed: mergedItem !== currItem[lastKey]};
+}
+
+function constructTrie(tree, merged, lastKey, path) {
+  const newItem = Object.assign(tree.constructor(), tree);
+  let currItem = newItem;
+
+  for (let i = 0; i < path.length - 1; i++) {
+    const key = path[i];
+    if (!currItem[key]) {
+      currItem[key] = {};
+    } else {
+      currItem[key] = Object.assign(currItem[key].constructor(), currItem[key]);
+    }
+    currItem = currItem[key];
+  }
+
+  currItem[lastKey] = merged.item;
+
+  return newItem;
+}
+
+function deepMergeIn(path, merger) {
+  let currItem = this;
+  const lastKey = path[path.length - 1];
+
+  // check if merge changes something
+  const merged = getMerged(currItem, path, merger, lastKey);
+
+  // if reference does'nt change, return same(this)
+  if (merged && !merged.changed) {
     return this;
   }
 
-  // If path object is not undefined, should return merged
-  if (!currItem[lastKey]) {
-    // Updating newItem via reference
-    currItem[lastKey] = mergedItem;
-    return newItem;
-  }
-
-  // Updating newItem via reference
-  currItem[lastKey] = Object.assign(currItem[lastKey], mergedItem);
-
-  return newItem;
+  // if changes, object assign everything till the item and change it
+  // this way only the path will be changed (Immutable.js trie concept)
+  return constructTrie(this, merged, lastKey, path);
 }
 
 Object.defineProperty(Object.prototype, 'deepMergeIn', {
