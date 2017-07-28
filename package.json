@@ -28,7 +28,7 @@
     "browserify-istanbul": "2.0.0",
     "coveralls": "2.13.1",
     "eslint": "4.3.0",
-    "jasmine": "2.6.0",
+    "jasmine": "2.7.0",
     "jasmine-core": "2.6.4",
     "karma": "1.7.0",
     "karma-browserify": "5.1.1",
