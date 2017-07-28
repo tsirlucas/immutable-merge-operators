@@ -1,7 +1,7 @@
 function getMerged(tree, path, merger, lastKey) {
   let currItem = tree;
 
-  for (let i = 0; i < path.length - 1; i++) {
+  for (let i = 0, l=path.length - 1; i < l; i++) {
     const key = path[i];
     if (!currItem[key]) {
       const mergedItem = merger();
@@ -19,7 +19,7 @@ function constructTrie(tree, merged, lastKey, path) {
   const newItem = Object.assign(tree.constructor(), tree);
   let currItem = newItem;
 
-  for (let i = 0; i < path.length - 1; i++) {
+  for (let i = 0, l = path.length - 1; i < l; i++) {
     const key = path[i];
     if (!currItem[key]) {
       currItem[key] = {};
