@@ -90,11 +90,12 @@ Spread and object assign returns a new instance even if nothing changes, so
 you can't use equality check on objects or arrays. It's not 100% functional.
 
 #### Why would I want the same reference?
-When you're working with libs like react or redux, whenever the store
+When you're working with libs like React or Redux, whenever the store
 or your state changes the lifecycle will be triggered again and all your logics
 will run, even the render (react shallow diff should handle the DOM changes, but 
 not your logics). With the same reference your shouldComponentUpdate method will 
-be able to use equality check on objects and arrays.
+be able to use equality check on objects and arrays and redux won't trigger the
+subscribe [(you may need a hand with this)](https://github.com/tsirlucas/redux-pure-subscribe).
 
 #### Why not use Immutable.js then?
 Immutable.js comes with a lot of power that you may not need. Also, it turns 
