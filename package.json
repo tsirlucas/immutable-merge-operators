@@ -3,6 +3,10 @@
   "version": "0.2.1",
   "description": "100% vanilla JS immutable merge operators that returns the same reference if nothing changes",
   "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tsirlucas/immutable-merge-operators.git"
+  },
   "scripts": {
     "lint": "eslint src/** test/**",
     "build": "NODE_ENV=production BABEL_ENV=production webpack --config webpack.config.babel.js",
@@ -16,6 +20,10 @@
   ],
   "author": "Lucas Correia <tsirlucas@gmail.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/tsirlucas/redux-pure-subscribe/issues"
+  },
+  "homepage": "https://github.com/tsirlucas/redux-pure-subscribe#readme",
   "devDependencies": {
     "babel-core": "6.25.0",
     "babel-eslint": "7.2.3",
