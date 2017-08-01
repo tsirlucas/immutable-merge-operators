@@ -10,7 +10,7 @@ const buildPath = path.resolve(__dirname, 'dist');
 const getFileName = (str) => {
   const splitStr = str.split('/');
   return splitStr[splitStr.length-1]
-    .slice(0, splitStr.length-7)
+    .slice(0, splitStr.length-7);
 };
 
 // Converting array to object with same keys
