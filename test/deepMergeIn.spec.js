@@ -37,9 +37,9 @@ describe('deepMergeIn operator', () => {
   const emptyArr = [];
 
   it('should return same reference when nothing changes', () => {
-    const merged = object.deepMergeIn(
+    const merged = object.$deepMergeIn(
       ['object2', 'object3'],
-      (item) => item.merge(emptyObj)
+      (item) => item.$merge(emptyObj)
     );
 
     //checking reference
@@ -47,9 +47,9 @@ describe('deepMergeIn operator', () => {
   });
 
   it('should return same reference when nothing changes on arrays', () => {
-    const mergedArr = array.deepMergeIn(
+    const mergedArr = array.$deepMergeIn(
       [0, 0],
-      (item) => item.merge(emptyArr)
+      (item) => item.$merge(emptyArr)
     );
 
     //checking reference
@@ -57,9 +57,9 @@ describe('deepMergeIn operator', () => {
   });
 
   it('should return new merged instance when something changes', () => {
-    const merged = object2.deepMergeIn(
+    const merged = object2.$deepMergeIn(
       ['object2', 'object3'],
-      (item) => item.merge(object3)
+      (item) => item.$merge(object3)
     );
 
     const newMerged = {
@@ -77,9 +77,9 @@ describe('deepMergeIn operator', () => {
   });
 
   it('should return new merged instance when something changes on arrays', () => {
-    const mergedArr = array2.deepMergeIn(
+    const mergedArr = array2.$deepMergeIn(
       [0, 0],
-      (item) => item.merge(array3)
+      (item) => item.$merge(array3)
     );
 
     const newMergedArr = [
@@ -94,9 +94,9 @@ describe('deepMergeIn operator', () => {
   });
 
   it('should return new items when path doesnt exist', () => {
-    const merged = emptyObj.deepMergeIn(
+    const merged = emptyObj.$deepMergeIn(
       ['object2', 'object3'],
-      (item = {}) => item.merge(object3)
+      (item = {}) => item.$merge(object3)
     );
 
     const newMerged = {
@@ -114,9 +114,9 @@ describe('deepMergeIn operator', () => {
   });
 
   it('should return new items when path doesnt exist on arrays', () => {
-    const mergedArr = emptyArr.deepMergeIn(
+    const mergedArr = emptyArr.$deepMergeIn(
       [0, 0],
-      (item = []) => item.merge(array3)
+      (item = []) => item.$merge(array3)
     );
 
     const newMergedArr = [
@@ -132,13 +132,13 @@ describe('deepMergeIn operator', () => {
 
   it('should return pipeble items', () => {
     const merged = emptyObj
-      .deepMergeIn(
+      .$deepMergeIn(
         ['object2', 'object3'],
-        (item = {}) => item.merge({a: 1})
+        (item = {}) => item.$merge({a: 1})
       )
-      .deepMergeIn(
+      .$deepMergeIn(
         ['object4', 'object5'],
-        (item = {}) => item.merge({b: 2})
+        (item = {}) => item.$merge({b: 2})
       );
 
     const newMerged = {

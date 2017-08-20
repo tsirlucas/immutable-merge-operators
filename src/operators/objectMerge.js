@@ -8,7 +8,7 @@ function objMerge(object) {
   return {...this, ...object};
 }
 
-Object.defineProperty(Object.prototype, 'merge', {
+Object.defineProperty(Object.prototype, '$merge', {
   value: objMerge,
   writable: true,
   enumerable: false,

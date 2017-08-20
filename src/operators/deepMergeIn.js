@@ -51,14 +51,14 @@ function deepMergeIn(path, merger) {
   return constructTrie(this, merged, lastKey, path);
 }
 
-Object.defineProperty(Object.prototype, 'deepMergeIn', {
+Object.defineProperty(Object.prototype, '$deepMergeIn', {
   value: deepMergeIn,
   writable: true,
   enumerable: false,
   configurable: true
 });
 
-Object.defineProperty(Array.prototype, 'deepMergeIn', {
+Object.defineProperty(Array.prototype, '$deepMergeIn', {
   value: deepMergeIn,
   writable: true,
   enumerable: false,

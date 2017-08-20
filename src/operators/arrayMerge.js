@@ -9,7 +9,7 @@ function arrayMerge(newArray) {
   return this;
 }
 
-Object.defineProperty(Array.prototype, 'merge', {
+Object.defineProperty(Array.prototype, '$merge', {
   value: arrayMerge,
   writable: true,
   enumerable: false,
