@@ -37,9 +37,9 @@ const object3 = {
     age: 20
 };
 
-const merged = object.merge(object3); // {name: 'Foo', age: 20};
+const merged = object.$merge(object3); // {name: 'Foo', age: 20};
 
-const merged2 = object.merge(object2); // {name: 'Bar', age: 20};
+const merged2 = object.$merge(object2); // {name: 'Bar', age: 20};
 
 merged === object; // true
 
@@ -51,9 +51,9 @@ merged2 === object; //false
 Just like you would do with spread or Object.assign
 
 ```javascript
- const mergedState = state.merge({
+ const mergedState = state.$merge({
    ...state3,
-   object: state.object.merge(state3.object)
+   object: state.object.$merge(state3.object)
 });
 ```
 
@@ -65,8 +65,8 @@ It takes the path array and a callback function that you should execute on the d
 
 ```js
 const merged = object
-  .deepMergeIn(['key1', 'key2'],(item = {}) => item.merge({a: 1}))
-  .deepMergeIn(['key4', 'key5'],(item = []) => item.merge([2]));
+  .$deepMergeIn(['key1', 'key2'],(item = {}) => item.$merge({a: 1}))
+  .$deepMergeIn(['key4', 'key5'],(item = []) => item.$merge([2]));
 ```
 
 ## Lists
@@ -81,12 +81,12 @@ OBS: A shallow comparison is used to check objects properties
 
  // This also works and returns the same reference if arrays are equal
  // or the merged array if they'e not
- const mergedArray = array.merge(array2);
+ const mergedArray = array.$merge(array2);
 
  const arrayObj = [object, object3];
  const arrayObj2 = [object, object2, object3];
  //This works as well
- arrayObj.merge(arrayObj2);
+ arrayObj.$merge(arrayObj2);
 
 ```
 
@@ -110,6 +110,4 @@ It's 100% vanilla JS and this means that you'll use the operators on native obje
 
 ## TODO
 
-- More and better tests
-- Cleaner code
 - More operators
