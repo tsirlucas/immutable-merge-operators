@@ -28,7 +28,7 @@ describe('Array merge operator', () => {
   const arrayObj3 = [object, null];
 
   it('should return same reference when parameters are equal', () => {
-    const mergedArray = array.merge(array3);
+    const mergedArray = array.$merge(array3);
 
     //checking reference
     expect(true).toEqual(mergedArray === array);
@@ -36,8 +36,8 @@ describe('Array merge operator', () => {
   });
 
   it('should return new merged array when parameters are different', () => {
-    const mergedArray = array.merge(array2);
-    const mergedArray2 = array2.merge(array4);
+    const mergedArray = array.$merge(array2);
+    const mergedArray2 = array2.$merge(array4);
     const newMergedArray = [2, 2, 3, 4];
 
     //checking reference
@@ -48,8 +48,8 @@ describe('Array merge operator', () => {
   });
 
   it('should use shallow diff to check array of objects', () => {
-    const mergedArrayObj = arrayObj.merge(arrayObj3);
-    const mergedArrayObj2 = arrayObj.merge(arrayObj2);
+    const mergedArrayObj = arrayObj.$merge(arrayObj3);
+    const mergedArrayObj2 = arrayObj.$merge(arrayObj2);
 
     const newMergedArrayObj = [object, object2, object3];
 
