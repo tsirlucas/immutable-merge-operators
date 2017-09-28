@@ -34,7 +34,7 @@
     "babelify": "7.3.0",
     "browserify": "14.4.0",
     "browserify-istanbul": "2.0.0",
-    "coveralls": "2.13.1",
+    "coveralls": "2.13.2",
     "eslint": "4.7.2",
     "jasmine": "2.8.0",
     "jasmine-core": "2.8.0",
